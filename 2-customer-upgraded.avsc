@@ -1,0 +1,82 @@
+[
+  {
+    "type": "record",
+    "namespace": "com.example",
+    "name": "CustomerAddress",
+    "fields": [
+      {
+        "name": "address",
+        "type": "string"
+      },
+      {
+        "name": "city",
+        "type": "string"
+      },
+      {
+        "name": "postcode",
+        "type": [
+          "int",
+          "string"
+        ]
+      },
+      {
+        "name": "type",
+        "type": "enum",
+        "symbols": [
+          "PO BOX",
+          "RESIDENTIAL",
+          "ENTERPRISE"
+        ]
+      }
+    ]
+  },
+  {
+    "type": "record",
+    "namespace": "com.example",
+    "name": "Customer",
+    "doc": "Avro schema for our Customer",
+    "fields": [
+      {
+        "name": "first_name",
+        "type": "string",
+        "doc": ""
+      },
+      {
+        "name": "last_name",
+        "type": "string",
+        "doc": ""
+      },
+      {
+        "name": "age",
+        "type": "int",
+        "doc": ""
+      },
+      {
+        "name": "height",
+        "type": "float",
+        "doc": "height in centimetres"
+      },
+      {
+        "name": "weight",
+        "type": "float",
+        "doc": "weight in kilos"
+      },
+      {
+        "name": "automated_email",
+        "type": "boolean",
+        "default": true,
+        "doc": "true if user wants marketing emails"
+      },
+      {
+        "name": "customer_emails",
+        "type": "array",
+        "items": "string",
+        "default": []
+      },
+      {
+        "name": "customer_address",
+        "type": "com.example.CustomerAddress"
+      }
+    ]
+  }
+]
